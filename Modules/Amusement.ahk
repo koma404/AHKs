@@ -9,8 +9,8 @@ CloseAmusement() {
 
     Sleep 300
 
-    ; 清理被强杀进程残留的托盘图标
-    TrayIcon_Clean()
+    ; 清理被强杀进程残留的托盘图标（失败不影响前面已经关掉的程序）
+    try TrayIcon_Clean()
 }
 
 ; --- Ctrl+Alt+Q：关闭娱乐程序 ---

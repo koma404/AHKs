@@ -19,9 +19,9 @@ Print(text) {
     A_Clipboard := saved       ; 无论粘贴是否成功，都恢复原剪贴板
 }
 
-; 桌面、任务栏这类系统外壳窗口
+; 桌面、任务栏、开始菜单（Win7: DV2ControlHost）这类系统外壳窗口
 IsShellWindow(hwnd) {
-    try return WinGetClass(hwnd) ~= "^(Progman|WorkerW|Shell_TrayWnd|Shell_SecondaryTrayWnd)$"
+    try return WinGetClass(hwnd) ~= "^(Progman|WorkerW|Shell_TrayWnd|Shell_SecondaryTrayWnd|DV2ControlHost)$"
     return true
 }
 
